@@ -1,0 +1,10 @@
+C:\Users\WINDOWS 10\Documents\IDC\Year 2\Semester B\C#\Exercises\B20 Ex05 Yoav 205543390 Eldar 313371833\WindowsMemoryGame\obj\Debug\WindowsMemoryGame.csprojAssemblyReference.cache
+C:\Users\WINDOWS 10\Documents\IDC\Year 2\Semester B\C#\Exercises\B20 Ex05 Yoav 205543390 Eldar 313371833\WindowsMemoryGame\obj\Debug\WindowsMemoryGame.csproj.CoreCompileInputs.cache
+C:\Users\WINDOWS 10\Documents\IDC\Year 2\Semester B\C#\Exercises\B20 Ex05 Yoav 205543390 Eldar 313371833\WindowsMemoryGame\bin\Debug\WindowsMemoryGame.exe.config
+C:\Users\WINDOWS 10\Documents\IDC\Year 2\Semester B\C#\Exercises\B20 Ex05 Yoav 205543390 Eldar 313371833\WindowsMemoryGame\bin\Debug\WindowsMemoryGame.exe
+C:\Users\WINDOWS 10\Documents\IDC\Year 2\Semester B\C#\Exercises\B20 Ex05 Yoav 205543390 Eldar 313371833\WindowsMemoryGame\bin\Debug\WindowsMemoryGame.pdb
+C:\Users\WINDOWS 10\Documents\IDC\Year 2\Semester B\C#\Exercises\B20 Ex05 Yoav 205543390 Eldar 313371833\WindowsMemoryGame\obj\Debug\WindowsMemoryGame.exe
+C:\Users\WINDOWS 10\Documents\IDC\Year 2\Semester B\C#\Exercises\B20 Ex05 Yoav 205543390 Eldar 313371833\WindowsMemoryGame\obj\Debug\WindowsMemoryGame.pdb
+C:\Users\WINDOWS 10\Documents\IDC\Year 2\Semester B\C#\Exercises\B20 Ex05 Yoav 205543390 Eldar 313371833\WindowsMemoryGame\obj\Debug\WindowsMemoryGame.SettingsForm.resources
+C:\Users\WINDOWS 10\Documents\IDC\Year 2\Semester B\C#\Exercises\B20 Ex05 Yoav 205543390 Eldar 313371833\WindowsMemoryGame\obj\Debug\WindowsMemoryGame.csproj.GenerateResource.cache
+C:\Users\WINDOWS 10\Documents\IDC\Year 2\Semester B\C#\Exercises\B20 Ex05 Yoav 205543390 Eldar 313371833\WindowsMemoryGame\obj\Debug\WindowsMemoryGame.GameForm.resources
