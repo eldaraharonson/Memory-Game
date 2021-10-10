@@ -24,7 +24,7 @@ namespace WindowsMemoryGame
             m_BoardLength = i_BoardLength;
             m_BoardOfGame = new char[i_BoardLength, i_BoardWidth];
             m_ShowLettersOfBoard = new bool[i_BoardLength, i_BoardWidth];
-            initializeBoardGame();
+            InitializeBoardGame();
             LinkedListInitializer();
         }
 
@@ -45,7 +45,7 @@ namespace WindowsMemoryGame
             m_CellsThatAreNotDisplayed.Remove(cellToRemove);
         }
 
-        public void initializeBoardGame()
+        public void InitializeBoardGame()
         {
             char[] lettersForGame = GetCharsArray();
             char row = '0';

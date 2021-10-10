@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsMemoryGame
 {
+    
     public partial class SettingsForm : Form
     {
         private readonly string[] m_BoardSizes = {"4x4", "4x5", "4x6", "5x4", "5x6", "6x4", "6x5", "6x6"};
@@ -19,7 +20,7 @@ namespace WindowsMemoryGame
         {
             InitializeComponent();
         }
-
+        
         public void BoardSizeButton_Click(object sender, EventArgs e)
         {
             if (m_CounterForBoardSizes == 7)

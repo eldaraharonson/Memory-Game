@@ -1,0 +1,10 @@
+C:\Users\Eldar\Documents\IDC\Job Search\Projects to Show\Memory Game\Memory-Game\bin\Debug\WindowsApplication.exe.config
+C:\Users\Eldar\Documents\IDC\Job Search\Projects to Show\Memory Game\Memory-Game\bin\Debug\WindowsApplication.exe
+C:\Users\Eldar\Documents\IDC\Job Search\Projects to Show\Memory Game\Memory-Game\bin\Debug\WindowsApplication.pdb
+C:\Users\Eldar\Documents\IDC\Job Search\Projects to Show\Memory Game\Memory-Game\obj\x86\Debug\Memory Game.csprojAssemblyReference.cache
+C:\Users\Eldar\Documents\IDC\Job Search\Projects to Show\Memory Game\Memory-Game\obj\x86\Debug\WindowsMemoryGame.GameForm.resources
+C:\Users\Eldar\Documents\IDC\Job Search\Projects to Show\Memory Game\Memory-Game\obj\x86\Debug\WindowsMemoryGame.SettingsForm.resources
+C:\Users\Eldar\Documents\IDC\Job Search\Projects to Show\Memory Game\Memory-Game\obj\x86\Debug\Memory Game.csproj.GenerateResource.cache
+C:\Users\Eldar\Documents\IDC\Job Search\Projects to Show\Memory Game\Memory-Game\obj\x86\Debug\Memory Game.csproj.CoreCompileInputs.cache
+C:\Users\Eldar\Documents\IDC\Job Search\Projects to Show\Memory Game\Memory-Game\obj\x86\Debug\WindowsApplication.exe
+C:\Users\Eldar\Documents\IDC\Job Search\Projects to Show\Memory Game\Memory-Game\obj\x86\Debug\WindowsApplication.pdb
