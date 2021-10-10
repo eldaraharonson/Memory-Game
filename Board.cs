@@ -28,6 +28,10 @@ namespace WindowsMemoryGame
             LinkedListInitializer();
         }
 
+        /// <summary>
+        /// Initializes the linked list that will hold the cards that
+        /// have not been matched yet (all of them in the beginning)
+        /// </summary>
         public void LinkedListInitializer()
         {
             for (int row = 0; row < m_BoardLength; row++)
@@ -39,6 +43,7 @@ namespace WindowsMemoryGame
                 }
             }
         }
+
 
         public void RemoveLinkedListElement(string cellToRemove)
         {
@@ -64,6 +69,7 @@ namespace WindowsMemoryGame
             }
 
             string cell = "";
+            // puts the letters in random cell locations
             for (int i = 0; i < lettersForGame.Length; i++)
             {
                 int randomNumber = 0;
@@ -89,6 +95,10 @@ namespace WindowsMemoryGame
             }
         }
 
+        /// <summary>
+        /// Returns an array of all the letters that will 
+        /// be used in the game according to the size of the board
+        /// </summary>
         public char[] GetCharsArray()
         {
             string englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
