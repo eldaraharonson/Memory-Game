@@ -12,6 +12,8 @@ namespace WindowsMemoryGame
         public int m_Row;
         public int m_Column;
 
+        /// <param name="i_Row">the row number where the card is placed</param>
+        /// <param name="i_Column">the column number where the card is placed</param>
         public Card(int i_Row, int i_Column)
         {
             m_Row = i_Row;

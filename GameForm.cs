@@ -38,6 +38,7 @@ namespace WindowsMemoryGame
             m_BoardLength = i_BoardLength;
             m_BoardWidth = i_BoardWidth;
             m_FirstPlayer = new Player(i_FirstPlayerName, false, Color.LightGreen);
+            // creates second player based on decision of real player or CPU 
             if (string.Equals(i_SecondPlayerName, "-computer-"))
             {
                 m_SecondPlayer = new Player(i_SecondPlayerName, true, Color.Plum);
@@ -56,12 +57,19 @@ namespace WindowsMemoryGame
             AddButtons();
         }
 
+        /// <summary>
+        /// Sets the size of the game form according to number of cards (rows and columns) in the game
+        /// </summary>
         public void SetSize()
         {
             this.Height = 210 + m_BoardLength * 60;
             this.Width = 115 + m_BoardWidth * 50;
         }
 
+        /// <summary>
+        /// Adds the cards (which are clickable during the game) to the board according to the 
+        /// size of the board that the user has chosen
+        /// </summary>
         public void AddButtons()
         {
             for (int i = 0; i < m_BoardLength; i++)
@@ -81,10 +89,14 @@ namespace WindowsMemoryGame
             }
         }
         
+        /// <summary>
+        /// Click event handler for clicking on a card during the game
+        /// </summary>
         private void NewCard_Click(object sender, EventArgs e)
         {
             
             m_CardsPicked++;
+            // If it's the first card being picked in current player's turn then it is rendered and saved
             if (m_CardsPicked == 1)
             {
                 m_FirstCardPicked = sender as Card;
@@ -92,11 +104,13 @@ namespace WindowsMemoryGame
                 m_FirstCardCell = m_FirstCardPicked.m_Row + "" + m_FirstCardPicked.m_Column;
                 
             }
+            // Second card being picked
             else
             {
                 m_SecondCardPicked = sender as Card;
                 m_SecondCardPicked.Text = m_Board.m_BoardOfGame[m_SecondCardPicked.m_Row, m_SecondCardPicked.m_Column].ToString();
                 Application.DoEvents();
+                // Checks that the player hasn't picked the same card twice
                 if (!string.Equals(m_SecondCardPicked.m_Row + "" + m_SecondCardPicked.m_Column, m_FirstCardCell))
                 {
                     m_CardsPicked = 0;
@@ -105,14 +119,21 @@ namespace WindowsMemoryGame
             }
         }
 
+        /// <summary>
+        /// Checks if the letters representing the cards are equal and updates game accordingly
+        /// </summary>
+        /// <param name="i_SecondCardCell">string represantation of the second card place on the board
+        /// </param>
         public void HandleTurn(string i_SecondCardCell)
         {
             if (Turn.checkIfCellsAreEqual(ref m_Board, m_FirstCardCell, i_SecondCardCell, m_CurrentPlayer, m_WaitingPlayer))
             {
                 m_FirstPlayerLabel.Text = m_FirstPlayer.GetPlayerName() + "'s score: " + m_FirstPlayer.GetPoints();
                 m_SecondPlayerLabel.Text = m_SecondPlayer.GetPlayerName() + "'s score: " + m_SecondPlayer.GetPoints();
+                // the cards turn the color of the player that picked them
                 m_FirstCardPicked.BackColor = m_CurrentPlayer.m_BackgroundColor;
                 m_SecondCardPicked.BackColor = m_CurrentPlayer.m_BackgroundColor;
+                // if all cards have been matched (game over)
                 if (!m_Board.m_CellsThatAreNotDisplayed.Any())
                 {
                     ShowResults();
@@ -120,6 +141,7 @@ namespace WindowsMemoryGame
             }
             else
             {
+                // players switch turns
                 Player temp = m_CurrentPlayer;
                 m_CurrentPlayer = m_WaitingPlayer;
                 m_WaitingPlayer = temp;
@@ -128,6 +150,8 @@ namespace WindowsMemoryGame
                 Thread.Sleep(1500);
             }
 
+            // renders the letters on the cards that are supposed to be shown according to 
+            // the boolean matrix m_Board.m_ShowLettersOfBoard
             for (int i = 0; i < m_BoardLength; i++)
             {
                 for (int j = 0; j < m_BoardWidth; j++)
@@ -142,7 +166,7 @@ namespace WindowsMemoryGame
                     }
                 }
             }
-
+            
             if (m_CurrentPlayer.GetIfIsComputer())
             {
                 HandleComputerTurn();
@@ -152,8 +176,10 @@ namespace WindowsMemoryGame
         public void HandleComputerTurn()
         {
             m_FirstCardCell = Turn.GetRandomCell(m_Board);
+            // Sleep is neccessary in order to not have the cpu choose the same card
             Thread.Sleep(200);
             string secondCell;
+            // this loop makes sure 2 different cards are picked
             do
             {
                 secondCell = Turn.GetRandomCell(m_Board);
@@ -203,6 +229,9 @@ namespace WindowsMemoryGame
             this.Controls.Add(m_SecondPlayerLabel);
         }
 
+        /// <summary>
+        /// Message box with the end results
+        /// </summary>
         public void ShowResults()
         {
             DialogResult result = MessageBox.Show(getEndGameMessage(), "Game Over", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

@@ -109,6 +109,10 @@ namespace WindowsMemoryGame
             return random.Next(min, max);
         }
 
+        /// <summary>
+        /// Gives the indication to render the letter of the given card represented
+        /// by the cell string
+        /// </summary>
         public void SetBooleanValue(string i_CellToUpdate, bool i_ValToUpdate)
         {
             int.TryParse(i_CellToUpdate[0].ToString(), out int row);
@@ -116,6 +120,13 @@ namespace WindowsMemoryGame
             m_ShowLettersOfBoard[row, column] = i_ValToUpdate;
         }
 
+
+        /// <summary>
+        /// Returns char presented on the card represented by i_CellToDisplay
+        /// </summary>
+        /// <param name="i_CellToDisplay">String of 2 digits representing the cell number
+        /// first digit is the row, second digit is the column</param>
+        /// <returns></returns>
         public char GetCharOfCell(string i_CellToDisplay)
         {
             int.TryParse(i_CellToDisplay[0].ToString(), out int row);

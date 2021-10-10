@@ -11,6 +11,10 @@ namespace WindowsMemoryGame
 {
     public class Turn
     {
+        /// <summary>
+        /// Picks a random cell from the list of cells that are not rendered (haven't been matched)
+        /// </summary>
+        /// <returns>string representing the cell location of the random cell</returns>
         public static string GetRandomCell(Board i_Board)
         {
             Random random = new Random();
@@ -28,6 +32,9 @@ namespace WindowsMemoryGame
             return cell;
         }
 
+        /// <summary>
+        /// Recieves two strings representing cell spot and checks if they present the same letter
+        /// </summary>
         public static bool checkIfCellsAreEqual(ref Board i_Board, string i_FirstCell, string i_SecondCell, Player i_PlayingPlayer, Player i_WaitingPlayer)
         {
             if (string.Equals(i_Board.GetCharOfCell(i_FirstCell), i_Board.GetCharOfCell(i_SecondCell)))
@@ -42,8 +49,12 @@ namespace WindowsMemoryGame
             return string.Equals(i_Board.GetCharOfCell(i_FirstCell), i_Board.GetCharOfCell(i_SecondCell));
         }
 
+        /// <summary>
+        /// Is called when a pair has been matched
+        /// </summary>
         private static void success(ref Board io_Board, string i_FirstCell, string i_SecondCell, Player io_PlayingPlayer, Player i_WaitingPlayer)
         {
+            // the 2 cards that have been matched are rendered
             io_Board.SetBooleanValue(i_FirstCell, true);
             io_Board.SetBooleanValue(i_SecondCell, true);
             io_PlayingPlayer.AddPoint();
@@ -51,8 +62,12 @@ namespace WindowsMemoryGame
             io_Board.RemoveLinkedListElement(i_SecondCell); 
         }
 
+        /// <summary>
+        /// Is called when 2 cards that were picked don't match
+        /// </summary>
         private static void failure(ref Board i_Board, string i_FirstCell, string i_SecondCell, Player i_PlayingPlayer, Player i_WaitingPlayer)
         {
+            // Letters of the cards are hidden again
             i_Board.SetBooleanValue(i_FirstCell, false);
             i_Board.SetBooleanValue(i_SecondCell, false);
         }

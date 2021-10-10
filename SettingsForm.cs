@@ -21,6 +21,10 @@ namespace WindowsMemoryGame
             InitializeComponent();
         }
         
+        /// <summary>
+        /// Each time the button is clicked the option for the board size is changed
+        /// based on m_BoardSizes
+        /// </summary>
         public void BoardSizeButton_Click(object sender, EventArgs e)
         {
             if (m_CounterForBoardSizes == 7)
@@ -35,6 +39,10 @@ namespace WindowsMemoryGame
             (sender as Button).Text = m_BoardSizes[m_CounterForBoardSizes];
         }
 
+        /// <summary>
+        /// Each time the button is clicked the option of playing 2 players or
+        /// against the CPU changes
+        /// </summary>
         private void againstAFriendButton_Click(object sender, EventArgs e)
         {
             if (string.Equals((sender as Button).Text, "Against a Friend"))
@@ -51,6 +59,9 @@ namespace WindowsMemoryGame
             }
         }
 
+        /// <summary>
+        /// Creates board and starts the game
+        /// </summary>
         private void startButton_Click(object sender, EventArgs e)
         {
             int.TryParse(BoardSizeButton.Text[0].ToString(), out int boardLength);
